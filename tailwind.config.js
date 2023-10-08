@@ -1,26 +1,28 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+const colors = require("tailwindcss/colors");
+
+module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          "primary": "#007BFF",
-          "secondary": "#6C757D",
-          "success": "#28A745",
-          "danger": "#DC3545",
-          "warning": "#FFC107",
-          "info": "#17A2B8",
-          "light": "#F8F9FA",
-          "dark": "#343A40",
-          "accent": "#37cdbe",
-          "neutral": "#3d4451",
-          "base-100": "#ffffff",
-        },
+  theme: {
+    container: {
+      padding: {
+        DEFAULT: "2rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
       },
-      "light",
-    ],
+    },
+    extend: {
+      colors: {
+        primary: "#0D6EFD",
+        secondary: "#00BCD4",
+        tertiary: "#3F51B5",
+        quaternary: "#D1A054",
+      },
+    },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 };
