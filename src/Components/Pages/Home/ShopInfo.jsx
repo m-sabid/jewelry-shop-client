@@ -51,7 +51,7 @@ const ShopInfo = ({ name, ingredients, image }) => {
                 </span>
 
                 <span className="text-gray-700">
-                  <b className="text-secondary">Diverse Jewelry Collection:</b>  <p className="border-l-2 pl-3 ml-3"> Our store boasts a vast
+                  <b className="text-secondary">Diverse Jewelry Collection:</b> <p className="border-l-4 pl-3 ml-3"> Our store boasts a vast
                   assortment of jewelry, from stunning rings and necklaces to
                   exquisite earrings and bracelets. We offer a wide range of
                   styles and materials, including precious metals like gold,
@@ -66,7 +66,7 @@ const ShopInfo = ({ name, ingredients, image }) => {
                 </span>
 
                 <span className="text-gray-700">
-                  <b className="text-secondary">Customization Services:</b>  <p className="border-l-2 pl-3 ml-3"> We understand the significance
+                  <b className="text-secondary">Customization Services:</b> <p className="border-l-4 pl-3 ml-3"> We understand the significance
                   of personalization. Create one-of-a-kind pieces with our
                   customization options. Select your preferred metals,
                   gemstones, and settings. Our skilled artisans will craft
@@ -80,7 +80,7 @@ const ShopInfo = ({ name, ingredients, image }) => {
                   <FaHandPointRight />{" "}
                 </span>
                 <span className="text-gray-700">
-                  <b className="text-secondary">Expert Guidance and Appraisals:</b> <p className="border-l-2 pl-3 ml-3"> Our knowledgeable staff
+                  <b className="text-secondary">Expert Guidance and Appraisals:</b> <p className="border-l-4 pl-3 ml-3"> Our knowledgeable staff
                   and gemologists provide expert advice. Whether you're seeking
                   assistance with a significant purchase or jewelry appraisal,
                   we're here to help. Understand the quality and value of your
