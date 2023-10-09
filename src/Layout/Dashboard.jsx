@@ -11,12 +11,13 @@ import {
   FaRegCalendarCheck,
   FaRegCalendarPlus,
   FaReceipt,
+  FaShoppingCart,
 } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 // import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
-  const [isAdmin] = useAdmin();
+  const { isAdmin } = useAdmin();
   // const { isInstructor } = useInstructor();
 
   return (
@@ -28,7 +29,7 @@ const Dashboard = () => {
       <div className="drawer-content">
         <Outlet></Outlet>
       </div>
-      <div className="drawer-side bg-quaternary">
+      <div className="drawer-side bg-primary">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80">
           {isAdmin && (
@@ -44,57 +45,31 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/all-classes">
-                  <FaBookOpen></FaBookOpen> All Classes
+                <NavLink to="/dashboard/add-product">
+                  <FaRegCalendarPlus></FaRegCalendarPlus> Add Product
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manage-classes">
-                  <FaHotTub></FaHotTub> Manage Classes
+                <NavLink to="/dashboard/all-product">
+                  <FaBookOpen></FaBookOpen> All Product
                 </NavLink>
               </li>
               <div className="divider"></div>
             </>
           )}
-
-          {/* {isInstructor && (
-            <>
-              <li>
-                <NavLink to="/dashboard/instructor-home">
-                  <FaHome></FaHome> Instructor Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/instructor-add-class">
-                  <FaRegCalendarPlus></FaRegCalendarPlus> Add Class
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/instructor-my-class">
-                  <FaRegCalendarCheck></FaRegCalendarCheck> My Class
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/instructor-feedback">
-                  <FaReceipt></FaReceipt> Feedback
-                </NavLink>
-              </li>
-              <div className="divider"></div>
-            </>
-          )} */}
           <li>
             <NavLink to="/">
               <FaHome></FaHome> Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/my-classes">
-              <FaCalendarAlt></FaCalendarAlt> My Classes
+            <NavLink to="/dashboard/my-purses">
+              <FaCalendarAlt></FaCalendarAlt> My purses
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/enrolled-classes">
-              <FaInbox></FaInbox> Enrolled Classes
+            <NavLink to="/dashboard/wishlist">
+              <FaShoppingCart></FaShoppingCart> Wishlist Classes
             </NavLink>
             <NavLink to="/dashboard/payment-history">
               <FaWallet></FaWallet> Payment History

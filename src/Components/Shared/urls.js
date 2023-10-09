@@ -1,2 +1,2 @@
 
-export const base_url = "https://picture-capture-camp-server-m-sabid.vercel.app";
+export const base_url = "http://localhost:5000";

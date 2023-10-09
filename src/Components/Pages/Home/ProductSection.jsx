@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
+import axios from "axios";
+import { base_url } from "../../Shared/urls";
+import { Link } from "react-router-dom";
+import { FaAngleDown, FaShoppingCart } from "react-icons/fa";
 
 function ProductSection() {
   //useEffect
@@ -9,13 +13,25 @@ function ProductSection() {
 
   const [product, setProduct] = useState([]);
 
+  useEffect(() => {
+    fetchPopularProducts();
+  }, []);
+
+  async function fetchPopularProducts() {
+    try {
+      const response = await axios.get(`${base_url}/api/all-products`);
+      setProduct(response.data);
+    } catch (error) {
+      console.error("Error fetching popular Products", error);
+    }
+  }
 
   return (
-    <div className="w-full mx-auto bg-gray-300">
+    <div className="w-full mx-auto bg-gray-300 py-5">
       <div className="container">
-        <h1 className="text-3xl font-bold">Product Section</h1>
+        <h1 className="text-3xl font-bold my-3">Product Section</h1>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {product.slice(0, 6).map((classItem, index) => (
+          {product.slice(0, 8).map((classItem, index) => (
             <div key={index} data-aos="zoom-in">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img
@@ -27,16 +43,18 @@ function ProductSection() {
                   <h3 className="text-xl font-semibold mb-2">
                     {classItem.title}
                   </h3>
-                  <p className="flex items-center text-gray-600">
-                    <span className="bg-gray-200 px-2 rounded-full mr-1">
-                      <FiEye />
-                    </span>
-                    <i>{classItem.students} Buy</i>
-                  </p>
+                  <Link className="btn bg-primary text-white" to={"/products"}>
+                    <FaShoppingCart /> Buy Now
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center">
+        <Link className="text-center bg-primary btn hover:bg-gray-800 mt-5 text-white" to={"/products"}>
+          See more <FaAngleDown />
+        </Link>
         </div>
       </div>
     </div>

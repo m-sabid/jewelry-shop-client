@@ -14,18 +14,18 @@ const PopularItems = () => {
   const [popularItems, setPopularItems] = useState([]);
 
   useEffect(() => {
-    fetchPopularClasses();
+    fetchPopularProducts();
   }, []);
 
-  async function fetchPopularClasses() {
+  async function fetchPopularProducts() {
     try {
-      const response = await axios.get(`${base_url}/api/popular-classes`);
+      const response = await axios.get(`${base_url}/api/popular-products`);
       setPopularItems(response.data);
     } catch (error) {
-      console.error("Error fetching popular classes", error);
+      console.error("Error fetching popular Products", error);
     }
   }
-
+console.log(popularItems)
   return (
     <div className="container mx-auto py-8">
       <h2 className="text-2xl font-bold mb-6">Popular Items</h2>
