@@ -1,2 +1,2 @@
 
-export const base_url = "http://localhost:5000";
+export const base_url = "https://jewelry-shop-server-sabid.vercel.app";
