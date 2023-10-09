@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "/diamond-logo.svg"
+import logo from "/diamond-logo.svg";
 
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -57,20 +57,29 @@ const NavBar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary z-20 rounded-box w-52"
           >
-             <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/blog"}>Blogs</Link>
-          </li>
-          <li>
-            <Link to={"/products"}>All Products</Link>
-          </li>
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link to={"/products"}>All Jewelry</Link>
+            </li>
+
+            <li>
+              <Link to={"/blog"}>Blogs</Link>
+            </li>
 
             {user && (
-              <li>
-                <Link to={"/dashboard"}>Dashboard</Link>
-              </li>
+              <>
+                <li>
+                  <Link to={"/dashboard/wishlist"}>My Jewelry</Link>
+                </li>
+                <li>
+                  <Link to={"/dashboard/add-product"}>Add Jewelry</Link>
+                </li>
+                <li>
+                  <Link to={"/dashboard"}>Dashboard</Link>
+                </li>
+              </>
             )}
             <li>
               {user && (
@@ -150,21 +159,29 @@ const NavBar = () => {
         </Link>
       </div>
 
-      <div className="navbar-end hidden lg:flex lg:justify-center lg:items-center">
-        <ul className="font-bold p-2 bg-primary rounded-box lg:flex lg:justify-center lg:items-center gap-4">
+      <div className="navbar-end w-full hidden lg:flex lg:justify-center lg:items-center">
+        <ul className="font-bold p-2 bg-primary w-full rounded-box lg:flex lg:justify-center lg:items-center gap-4">
           <li>
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/blogs"}>Blogs</Link>
+            <Link to={"/products"}>All Jewelry</Link>
           </li>
           <li>
-            <Link to={"/products"}>All Products</Link>
+            <Link to={"/blog"}>Blogs</Link>
           </li>
           {user && (
-            <li>
-              <Link to={"/dashboard"}>Dashboard</Link>
-            </li>
+             <>
+             <li>
+               <Link to={"/dashboard/wishlist"}>My Jewelry</Link>
+             </li>
+             <li>
+               <Link to={"/dashboard/add-product"}>Add Jewelry</Link>
+             </li>
+             <li>
+               <Link to={"/dashboard"}>Dashboard</Link>
+             </li>
+           </>
           )}
 
           <li>

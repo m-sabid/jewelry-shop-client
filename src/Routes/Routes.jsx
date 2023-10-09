@@ -51,10 +51,6 @@ export const router = createBrowserRouter([
         path: "/blog",
         element: <BlogPage />,
       },
-      // {
-      //   path: "/instructors",
-      //   element: <InstructorsPage />,
-      // },
     ],
   },
   {
@@ -76,35 +72,23 @@ export const router = createBrowserRouter([
       {
         path: "all-users",
         element: (
-          <AdminRoute>
+          <PrivateRoute>
             <AllUsers />
-          </AdminRoute>
+          </PrivateRoute>
         ),
       },
       {
         path: "all-product",
         element: (
-          <AdminRoute>
+          <PrivateRoute>
             <AllProductPage />
-          </AdminRoute>
+          </PrivateRoute>
         ),
       },
       {
         path: "add-product",
         element: <AddProduct />,
       },
-      // {
-      //   path: "instructor-add-class",
-      //   element: <AddClasses />,
-      // },
-      // {
-      //   path: "instructor-my-class",
-      //   element: <InstructorClasses />,
-      // },
-      // {
-      //   path: "instructor-feedback",
-      //   element: <InstructorFeedback />,
-      // },
     ],
   },
   {
@@ -123,10 +107,6 @@ export const router = createBrowserRouter([
         path: "payment",
         element: <Payment />,
       },
-  //     {
-  //       path: "enrolled-classes",
-  //       element: <EnrolledClasses />,
-  //     },
       {
         path: "payment-history",
         element: <PaymentHistory />,
